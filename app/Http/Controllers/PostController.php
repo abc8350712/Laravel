@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Http\Request;
 use Session;
 class PostController extends Controller
 {

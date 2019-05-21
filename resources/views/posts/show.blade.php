@@ -28,6 +28,13 @@
 						{{Form::close()}}
 					</div>
 				</div>
+				<div class='row'>
+					<div class="col-sm-12">
+						{!!Form::open(['route' => ['posts.index', $post->id], 'method' => 'GET']) !!}
+						{!!Form::submit('<< See All Posts', ['class' => 'btn btn-block btn-default btn-h1-spacing'])!!}
+						{{Form::close()}}
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
