@@ -13,9 +13,10 @@
         <img src="img/log.png" alt="logo">      
       </div>
       <div class="row google-form text-center">
-        <form action="scripts/search.php" method="post">
+        <form action="scripts/search.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <input type="text" class="form-control google-search" name="q">
+                <input type="file" class="form-control google-search" name="q">
+
                 <div class="btn-group">
                   <button type="submit" class="btn btn-default">AV Search</button>
                   <a type="button" href="https://www.google.com/doodles" class="btn btn-default">Donate for us?</a>        
