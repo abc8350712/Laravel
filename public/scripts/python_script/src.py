@@ -8,9 +8,13 @@ args = parser.parse_args()
 
 json_dir = './python_script/data/data.json'
 
+def argmin(lst):
+	return min(range(len(lst)), key=lst.__getitem__)
+def argmax(lst):
+	return max(range(len(lst)), key=lst.__getitem__)
 
 def readJsonData(json_dir):
-    return json.load(open(json_dir))
+    return json.load(open(json_dir, encoding='utf-8'))
 
 def getItems(json_dir):
     dict_data = readJsonData(json_dir)
@@ -22,7 +26,9 @@ def getItems(json_dir):
 [names, features] = getItems(json_dir)
 query_embedding = getEmbedding(args.query_dir)
 distance = face_recognition.face_distance(features, query_embedding)
-print('She is lyf')
+ind = argmin(distance)
+print(names[ind])
+
 
 
 

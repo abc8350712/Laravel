@@ -13,4 +13,5 @@ yarn-error.log
 /public/scripts/python_script/venv
 /public/scripts/python_script/.idea
 *.pyc
+/public/scripts/python_script/upload_img
 
