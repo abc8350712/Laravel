@@ -2,6 +2,9 @@ import face_recognition
 from tools.img2json import getEmbedding
 import json
 import argparse
+import codecs
+import sys
+sys.stdout = codecs.getwriter('utf-8')(sys.stdout.detach())
 parser = argparse.ArgumentParser()
 parser.add_argument("--query_dir")
 args = parser.parse_args()
@@ -10,6 +13,7 @@ json_dir = './python_script/data/data.json'
 
 def argmin(lst):
 	return min(range(len(lst)), key=lst.__getitem__)
+	
 def argmax(lst):
 	return max(range(len(lst)), key=lst.__getitem__)
 
@@ -28,7 +32,6 @@ query_embedding = getEmbedding(args.query_dir)
 distance = face_recognition.face_distance(features, query_embedding)
 ind = argmin(distance)
 print(names[ind])
-
 
 
 
