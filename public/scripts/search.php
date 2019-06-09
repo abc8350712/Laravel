@@ -1,4 +1,3 @@
-<meta charset="utf-8">
 <?php 
 	#echo $_POST['q'];
 	
@@ -11,5 +10,11 @@
         echo "上传失败";
     }
     $output = shell_exec('python python_script/src.py --query_dir '.$filepath);
-	echo $output;
+
+    $output = str_split($output);
+    foreach ($output as $value) {
+  		echo $value;
+  		#break;
+	}
+	#echo str_split($output);
  ?>
